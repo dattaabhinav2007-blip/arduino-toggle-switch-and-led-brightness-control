@@ -1,1 +1,72 @@
+//Toogle_Switch
+int ledState=0;
+int ledPin=8;
+int buttonPin=12;
+int buttonNew;
+int buttonold;
+int dt=100;
+void setup(){
+  Serial.begin(9600);
+  pinMode(ledPin,OUTPUT);
+  pinMode(buttonPin,INPUT);
+}
+void loop(){
+  buttonNew=digitalRead(buttonPin);
+  Serial.println(buttonNew);
+  if(buttonNew==0 && buttonold==1){
+    if(ledState==0){
+      digitalWrite(ledPin,HIGH);
+      ledState=1;
+    }
+    else{
+      digitalWrite(ledPin,LOW);
+      ledState=0;
+    }
+  }
+  buttonold=buttonNew;
+}
 
+
+//LEDBRIGHT_CONTROL_TOGGLE_SWITCH
+int buttonPin1=12;
+int buttonPin2=11;
+int buttonVal1;
+int buttonVal2;
+int LEDPin=9;
+int LEDbright=0;
+int buzzPin=2;
+int dt=500;
+void setup() {
+  // put your setup code here, to run once:
+Serial.begin(9600);
+pinMode(buttonPin1,INPUT_PULLUP);
+pinMode(buttonPin2,INPUT_PULLUP);
+pinMode(LEDPin,OUTPUT);
+pinMode(buzzPin,OUTPUT);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+buttonVal1=digitalRead(buttonPin1);
+Serial.print("Button1Val is: ");
+Serial.print(buttonVal1);
+buttonVal2=digitalRead(buttonPin2);
+Serial.print("  Button2Val is: ");
+Serial.println(buttonVal2);
+delay(250);
+if(buttonVal1==0){
+  LEDbright=LEDbright+50;
+}
+if(buttonVal2==0){
+  LEDbright=LEDbright-50;
+}
+if(LEDbright>255){
+  LEDbright=255;
+}
+if(LEDbright<0){
+  LEDbright=0;
+}
+Serial.println(LEDbright);
+delay(250);
+analogWrite(LEDPin,LEDbright);
+}
