@@ -9,11 +9,13 @@ Projects
 Toggle Switch LED Control
 
 - Used a toggle switch to turn an LED ON and OFF.
+- ▶️ Demo-Video: "https://drive.google.com/file/d/1EKtGu44AVx3Oy-lc0MbCfyHnz5b8L8Ap/view?usp=drivesdk"
 
 LED Brightness Control with Two Buttons
 
 - Used one button to increase the brightness of the LED.
 - Used another button to decrease the brightness of the LED.
+- ▶️ Demo-Video: "https://drive.google.com/file/d/1r_HbKnmfP-rukzxuts8xDgBP9KQ4mRQE/view?usp=drivesdk"
 
 Components Used
 
